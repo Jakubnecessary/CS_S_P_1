@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS suppliers;
 DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS suppliers;
+
 
 CREATE TABLE suppliers (
     id SERIAL PRIMARY KEY,
