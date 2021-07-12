@@ -20,3 +20,12 @@ def save(supplier):
     id = results[0]['id']
     supplier.id = id
     return supplier
+
+def select(id):
+    supplier = None
+    sql = "SELECT * FROM suppliers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        supplier = Supplier(result['company_name'], result['company_origin'])

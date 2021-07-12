@@ -32,7 +32,7 @@ def select(id):
 
     if result is not None:
         supplier = supplier_repository.select(result['supplier_id'])
-        product = Product(result['product_name'], result[''])
+        product = Product(result['product_name'], result['product_type'], result['product_description'], result['stock_quantity'], result['selling_price'], supplier, result['id'])
 
 
 
