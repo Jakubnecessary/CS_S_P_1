@@ -17,4 +17,4 @@ def products():
 @products_blueprint.route("/products/new", methods = ['GET'])
 def new_product():
     suppliers = supplier_repository.select_all()
-    return render_template('products/new_product', all_suppliers = suppliers)
+    return render_template('products/new_product.html', all_suppliers = suppliers)

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="new-product">
+    <form action="/products" method="POST">
+
+        <div>
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="title" name="product_name" placeholder="Name" required autofocus>
+        </div>
+
+            <div>
+                <label for="product_type">Type:</label>
+                <input type="text" id="product_type" name="product_type" placeholder="Type" required autofocus>
+            </div>
+
+            <div>
+                <label for="product_description">Description:</label>
+                <input type="text" id="product_desciption" name="product_desciption" placeholder="Desciption" required>
+            </div>
+
+            <div>
+                <label for="stock_quantity">Quantity:</label>
+                <input type="text" id="stock_quantity" name="stock_quantity" placeholder="Quantity" required>
+            </div>
+
+            <div>
+                <label for="selling_price">Price:</label>
+                <input type="text" id="selling_price" name="selling_price" placeholder="Price" required>
+            </div>
+            
+
+            <div>
+                <label for="supplier">Supplier:</label>
+                <select id="supplier" name="supplier_id">
+        {% for supplier in all_suppliers %}
+            <option value="{{ supplier.id }}">{{ supplier.company_full() }}</option>
+        {% endfor %}
+                </select>
+            </div>
+
+    <button type="submit">Add Product</button>
+
+</form>
+</div>
+
+
+{% endblock %}
