@@ -6,6 +6,7 @@ import repositories.product_repository as product_repository
 import repositories.supplier_repository as supplier_repository
 
 
+
 supplier_1 = Supplier("England", "Smbullion")
 supplier_repository.save(supplier_1)
 supplier_2 = Supplier("Scotland", "CandleShack")

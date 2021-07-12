@@ -9,6 +9,14 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        supplier = Supplier(row['company_name'], row['comany_origin'], row['id'] )
+        supplier = Supplier(row['company_name'], row['company_origin'], row['id'] )
         suppliers.append(supplier)
     return suppliers
+
+def save(supplier):
+    sql = "INSERT INTO suppliers (company_name, company_origin) VALUES (%s, %s) RETURNING *"
+    values = [supplier.company_name, supplier.company_origin]
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    supplier.id = id
+    return supplier

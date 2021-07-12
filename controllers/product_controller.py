@@ -28,7 +28,7 @@ def create_new_product():
     stock_quantity = request.form['stock_quantity']
     selling_price = request.form['selling_price']
     supplier  = supplier_repository.select(request.form['author_id'])
-    product = Product(product_name, product_type, product_description,stock_quantity, selling_price, supplier)
+    product = Product(product_name, product_type, product_description, stock_quantity, selling_price, supplier)
     product_repository.save(product)
     return redirect('/products')
     

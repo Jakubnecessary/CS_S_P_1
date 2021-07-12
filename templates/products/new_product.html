@@ -33,7 +33,7 @@
                 <label for="supplier">Supplier:</label>
                 <select id="supplier" name="supplier_id">
         {% for supplier in all_suppliers %}
-            <option value="{{ supplier.id }}">{{ supplier.company_full() }}</option>
+            <option value="{{ supplier.id }}">{{ supplier.company_origin }}</option>
         {% endfor %}
                 </select>
             </div>
