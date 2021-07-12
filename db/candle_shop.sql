@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS suppliers;
-DROP TABLE IS EXISTS products;
+DROP TABLE IF EXISTS products;
 
 CREATE TABLE suppliers (
     id SERIAL PRIMARY KEY,
@@ -14,5 +14,5 @@ CREATE TABLE products (
     product_description VARCHAR(255),
     stock_quantity INT,
     stock_price INT,
-    supplier(id) INT REFERENCES suppliers(id)
+    supplier_id INT REFERENCES suppliers(id)
 );
