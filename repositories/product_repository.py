@@ -36,8 +36,22 @@ def select(id):
         product = Product(result['product_name'], result['product_type'], result['product_description'], result['stock_quantity'], result['selling_price'], supplier, result['id'])
     return product
 
+def delete_all():
+    sql = "DELETE * FROM products"
+    run_sql(sql)
 
 
+def delete(id):
+    sql = "DELETE FROM products WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
+def update(product):
+    sql = "UPDATE products SET (product_name, product_type, product_description, stock_quantity, selling_price, supplier, supplier_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.product_name, product.product_type, product.product_description, product.supplier.id, product.id]
+    print(values)
+    run_sql(sql, values)
 
 
 #     pdb.set_trace()

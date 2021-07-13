@@ -7,12 +7,14 @@
 <div class="product">
     <div class="content">
     <a href="/products/{{product.id}}">{{product.product_name}} <span>INFO</span> </a>
+    <hr>
     <div class="product2">
         <h4>Product id: {{product.id}}</h4>
         <h4>Type: {{product.product_type}}</h4>
         <h4>Description: {{product.product_description}}</h4>
-        <h4>Quantity {{product.products_quantity}}</h4>
+        <h4>Quantity: {{product.product_quantity}}</h4>
     </div>
+    <hr>
     <div class="buttons">
 
         <form class="delete-form" action="/products/{{product.id}}/delete" method="POST">

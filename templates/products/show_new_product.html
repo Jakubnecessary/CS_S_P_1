@@ -2,14 +2,17 @@
 {% block content %}
 
 <div>
+    <h3>Eco Handmade Products!</h3>
+    <h4>Product:</h4>
     <p>{{product.product_name}}</p>
+    <h4>Type:</h4>
     <p>{{product.product_type}}</p>
+    <h4>Description</h4>
     <p>{{product.product_description}}</p>
+    <h4>Quantity:</h4>
     <p>{{product.stock_quantity}}</p>
+    <h4>Price:</h4>
     <p>{{product.selling_price}}</p>
 </div>
-
+<p><a href="/products/{{product.id}}/edit">Edit</a></p>
 {% endblock %}
-
-
-<!-- <p><a href="/products/{{product.id}}/edit">Edit</a></p> -->

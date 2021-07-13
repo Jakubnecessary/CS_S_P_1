@@ -39,4 +39,31 @@ def show_product(id):
     product = product_repository.select(id)
     return render_template('products/show_new_product.html', product = product)
 
-    
+
+# edit
+@products_blueprint.route("/products/<id>/edit", methods=['GET'])
+def edit_product(id):
+    product = product_repository.select(id)
+    suppliers = supplier_repository.select_all()
+    return render_template('products/edit.html', product = product, all_suppliers = suppliers)
+
+# updtae
+@products_blueprint.route("/products/<id>", methods=['POST'])
+def update_product(id):
+    product_name = request.form['product_name']
+    product_type = request.form['product_type']
+    product_description = request.form['product_description']
+    stock_quantity = request.form['stock_quantity']
+    selling_price = request.form['selling_price']
+    supplier  = supplier_repository.select(request.form['supplier_id'])
+    product = Product(product_name, product_type,product_description,stock_quantity,selling_price, supplier, id)
+    product_repository.update(product)
+    return redirect('/products')
+
+
+
+# delete by id
+@products_blueprint.route("/products/<id>/delete", methods=['POST'])
+def delete_product(id):
+    product_repository.delete(id)
+    return redirect('/products')
