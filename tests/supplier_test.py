@@ -9,4 +9,4 @@ class TestSupplier(unittest.TestCase):
         self.assertEqual("Chappels Craft", self.supplier.company_name)
 
     def test_supplier_has_origin(self):
-        self.assertEqual("Chappels Craft", self.supplier.company_origin)
+        self.assertEqual("England", self.supplier.company_origin)

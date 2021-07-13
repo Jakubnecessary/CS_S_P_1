@@ -14,6 +14,6 @@ CREATE TABLE products (
     product_type VARCHAR(255),
     product_description VARCHAR(255),
     stock_quantity INT,
-    stock_price INT,
+    selling_price INT,
     supplier_id INT REFERENCES suppliers(id)
 );

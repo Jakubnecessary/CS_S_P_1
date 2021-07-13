@@ -9,7 +9,7 @@ products_blueprint = Blueprint("products", __name__)
 # First route home/products
 @products_blueprint.route("/products")
 def products():
-    # products = product_repository.select_all()
+    products = product_repository.select_all()
     return render_template("products/index.html", all_products = products)
 
 # GET /new product
@@ -27,8 +27,16 @@ def create_new_product():
     product_description = request.form['product_description']
     stock_quantity = request.form['stock_quantity']
     selling_price = request.form['selling_price']
-    supplier  = supplier_repository.select(request.form['author_id'])
+    supplier  = supplier_repository.select(request.form['supplier'])
     product = Product(product_name, product_type, product_description, stock_quantity, selling_price, supplier)
     product_repository.save(product)
     return redirect('/products')
+
+
+# show 
+@products_blueprint.route("/products/<id>", methods=['GET'])
+def show_product(id):
+    product = product_repository.select(id)
+    return render_template('products/show_new_product.html', product = product)
+
     

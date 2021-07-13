@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="product-container">
+
+{% for product in all_products %}
+<div class="product">
+    <div class="content">
+    <a href="/products/{{product.id}}">{{product.product_name}} <span>INFO</span> </a>
+    <div class="product2">
+        <h4>Product id: {{product.id}}</h4>
+        <h4>Type: {{product.product_type}}</h4>
+        <h4>Description: {{product.product_description}}</h4>
+        <h4>Quantity {{product.products_quantity}}</h4>
+    </div>
+    <div class="buttons">
+
+        <form class="delete-form" action="/products/{{product.id}}/delete" method="POST">
+            <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+    </div>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+
+{% endblock %}

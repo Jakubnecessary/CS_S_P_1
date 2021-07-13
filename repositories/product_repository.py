@@ -8,7 +8,7 @@ import repositories.supplier_repository as supplier_repository
 def select_all():
     products = []
 
-    sql = "SELECT * FROM books"
+    sql = "SELECT * FROM products"
     results = run_sql(sql)
 
     for row in results:
@@ -26,13 +26,15 @@ def save(product):
     return product
 
 def select(id):
-    product = Nonesql = "SELECT * FROM products WHERE id = %s"
+    product = None
+    sql = "SELECT * FROM products WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
         supplier = supplier_repository.select(result['supplier_id'])
         product = Product(result['product_name'], result['product_type'], result['product_description'], result['stock_quantity'], result['selling_price'], supplier, result['id'])
+    return product
 
 
 
