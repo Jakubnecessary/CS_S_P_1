@@ -1,3 +1,4 @@
+import pdb
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.product import Product
@@ -50,13 +51,14 @@ def edit_product(id):
 # updtae
 @products_blueprint.route("/products/<id>", methods=['POST'])
 def update_product(id):
+    # pdb.set_trace()
     product_name = request.form['product_name']
     product_type = request.form['product_type']
     product_description = request.form['product_description']
     stock_quantity = request.form['stock_quantity']
     selling_price = request.form['selling_price']
     supplier  = supplier_repository.select(request.form['supplier_id'])
-    product = Product(product_name, product_type,product_description,stock_quantity,selling_price, supplier, id)
+    product = Product(product_name, product_type, product_description, stock_quantity, selling_price, supplier, id)
     product_repository.update(product)
     return redirect('/products')
 

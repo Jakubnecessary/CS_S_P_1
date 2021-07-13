@@ -28,17 +28,15 @@
     </div>
 
     <div>
-    <label for="product">product:</label>
-    <select id="product" name="product_id">
-        {% for product in all_products %}
-        <option value="{{ product.id }}"
-            {% if product.product.id == product.id %} selected="selected"{% endif %}>
-        </option>
-        {% endfor %}
-    </select>
+        <label for="supplier_id">Supplier:</label>
+        <select id="supplier_id" name="supplier_id">
+{% for supplier in all_suppliers %}
+    <option value="{{ supplier.id }}">{{ supplier.company_origin }}</option>
+{% endfor %}
+        </select>
     </div>
 
-  <button type="submit">Update product</button>
+<button type="submit">Update product</button>
 
 </form>
 
