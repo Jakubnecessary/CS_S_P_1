@@ -48,7 +48,7 @@ def delete(id):
 
 
 def update(product):
-    sql = "UPDATE products SET (product_name, product_type, product_description, stock_quantity, selling_price, supplier, id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE products SET (product_name, product_type, product_description, stock_quantity, selling_price, supplier_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [product.product_name, product.product_type, product.product_description, product.stock_quantity, product.selling_price, product.supplier.id, product.id]
     print(values)
     run_sql(sql, values)
