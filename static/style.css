@@ -35,7 +35,7 @@ input, select, button {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
-    background-color: rgba(34, 119, 224, 0.966);
+    background-color: rgba(199, 34, 224, 0.966);
     color:rgb(194, 22, 194);
     font-family: "fanatsy", arial, sans-serif; font-size: 30px;
     box-sizing: border-box;
@@ -72,12 +72,13 @@ input, select, button {
 }
 
 .show_new_product_1 {
-    flex-direction: row-reverse;
     background-color: sienna;
-    display: inline;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
 
-
-}
+};
 
 #home-image {
     background-image: url(images/monitoring-beehives-bees.jpeg);

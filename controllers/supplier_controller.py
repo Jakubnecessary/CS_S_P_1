@@ -34,11 +34,11 @@ def show_supplier(id):
     return render_template('suppliers/show_new_supplier.html', supplier = supplier)
 
 # edit
-@products_blueprint.route("/products/<id>/edit", methods=['GET'])
-def edit_product(id):
+@suppliers_blueprint.route("/suppliers/<id>/edit", methods=['GET'])
+def edit_supplier(id):
     product = product_repository.select(id)
     suppliers = supplier_repository.select_all()
-    return render_template('products/edit.html', product = product, all_suppliers = suppliers)
+    return render_template('suppliers/edit.html', product = product, all_suppliers = suppliers)
 
 # updtae
 @suppliers_blueprint.route("/suppliers/<id>", methods=['POST'])
