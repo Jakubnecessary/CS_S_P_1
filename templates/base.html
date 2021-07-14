@@ -12,9 +12,9 @@
 <header>
     <nav>
     <ul class="menu">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('products.new_product') }}">New Product</a></li>
-        <li><a href="{{ url_for('suppliers.new_supplier') }}">New Supplier</a></li>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/products/new">New Product</a></li>
+        <li><a href="/suppliers/new">New Supplier</a></li>
     </ul>
     </nav>
 </header>
@@ -23,9 +23,8 @@
     {% endblock %}
 </div>
 
-{%block home%}
+{% block home %}
 {% endblock %}
-{%block home2%}
-{% endblock %}
+
 </body>
 </html>

@@ -11,7 +11,6 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        product = product_repository.select(row[product.id])
         supplier = Supplier(row['company_name'], row['company_origin'], row['id'] )
         suppliers.append(supplier)
     return suppliers
