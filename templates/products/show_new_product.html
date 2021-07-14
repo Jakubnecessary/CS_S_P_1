@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="show_new_product_1">
+    <h3>put arrow left here</h3>
+    <h2>Details about this product</h2>
+    <h2>Or</h2>
+    <h3>put arrow down here</h3>
 
-<div>
+</div>
+<div class="show_new_product">
     <h3>Eco Handmade Products!</h3>
     <h4>Product:</h4>
     <p>{{product.product_name}}</p>
@@ -15,6 +21,7 @@
     <p>{{product.selling_price}}</p>
 </div>
 <hr>
+<button type="submit">Edit your Product</button>
 <h3>Edit your Product</h3>
 <p><a href="/products/{{product.id}}/edit">Edit Here</a></p>
 {% endblock %}

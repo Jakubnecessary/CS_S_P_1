@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="show_new_supplier_1">
+    <h3>put arrow left here</h3>
+    <h2>Details about this supplier</h2>
+    <h2>Or</h2>
+    <h3>put arrow down here</h3>
+
+</div>
+<div class="show_new_supplier">
+    <h3>Name</h3>
+    <p>{{supplier.company_name}}</p>
+    <h4>From?:</h4>
+    <p>{{product.company_origin}}</p>
+</div>
+<hr>
+<button type="submit">Edit your Product</button>
+<h3>Edit Supplier</h3>
+<p><a href="/suppliers/{{supplier.id}}/edit">Edit Here</a></p>
+{% endblock %}
