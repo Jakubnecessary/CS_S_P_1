@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
 from models.supplier import Supplier
 from models.product import Product
+import repositories.supplier_repository as supplier_repository
+import repositories.product_repository as product_repository
 
 def select_all():
     suppliers = []
@@ -9,6 +11,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
+        product = product_repository.select(row[product.id])
         supplier = Supplier(row['company_name'], row['company_origin'], row['id'] )
         suppliers.append(supplier)
     return suppliers
@@ -46,7 +49,7 @@ def update(supplier):
     run_sql(sql, values)
 
 def products(supplier):
-    books = []
+    products = []
 
     sql = "SELECT * FROM products WHERE supplier_id = %s"
     values = [supplier.id]
@@ -54,5 +57,5 @@ def products(supplier):
 
     for row in results:
         product = Product(row['product_name'], row['product_type'], row['product_description'], row['stock_quantity'], row['selling_price'], row['supplier_id'], row['id'] )
-        books.append(product)
-    return books
+        products.append(product)
+    return products

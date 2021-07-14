@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
 from controllers.product_controller import products_blueprint
+from controllers.supplier_controller import suppliers_blueprint
 
 app = Flask(__name__)
 

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="supplier-container">
+
+{% for supplier in all_suppliers %}
+<div class="supplier">
+    <div class="content">
+    <a href="/suppliers/{{supplier.id}}">{{supplier.company_name}} <span>DETAILS</span> </a>
+    <hr>
+    <div class="supplier2">
+        <h4>Supplier id: {{supplier.id}}</h4>
+        <h4>Supplier name: {{supplier.company_name}}</h4>
+        <h4>Origin: {{supplier.company_origin}}</h4>
+    </div>
+    <hr>
+    <div class="buttons">
+
+        <form class="delete-form" action="/products/{{product.id}}/delete" method="POST">
+            <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+    </div>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+
+{% endblock %}

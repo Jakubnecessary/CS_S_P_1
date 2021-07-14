@@ -5,7 +5,7 @@ class Supplier:
         self.id = id
 
 
-def company_full(self):
-    return f"{self.company_name}{self.company_origin}"
+# def company_full(self):
+#     return f"{self.company_name}{self.company_origin}"
 
 
