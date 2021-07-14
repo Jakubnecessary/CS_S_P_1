@@ -21,7 +21,7 @@ input, select, button {
 .menu li{
     padding-right: 10px;
     list-style: none;
-    color: white;
+    color: blue;
     font-family: "fantasy", arial, sans-serif; font-size: 14px;
 }
 
