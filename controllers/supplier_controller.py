@@ -36,16 +36,15 @@ def show_supplier(id):
 # edit
 @suppliers_blueprint.route("/suppliers/<id>/edit", methods=['GET'])
 def edit_supplier(id):
-    product = product_repository.select(id)
+    supplier = supplier_repository.select(id)
     suppliers = supplier_repository.select_all()
-    return render_template('suppliers/edit.html', product = product, all_suppliers = suppliers)
+    return render_template('suppliers/edit.html', supplier = supplier, all_suppliers = suppliers)
 
 # updtae
 @suppliers_blueprint.route("/suppliers/<id>", methods=['POST'])
 def update_supplier(id):
     company_name = request.form['company_name']
     company_origin = request.form['company_origin']
-    supplier  = supplier_repository.select(request.form['supplier_id'])
     supplier = Supplier(company_name, company_origin, id)
     supplier_repository.update(supplier)
     return redirect('/suppliers')

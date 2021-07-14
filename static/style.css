@@ -1,5 +1,6 @@
 body{
     font-family: "fanatsy", arial, sans-serif; font-size: 20px;
+    background-image: url(images/honeycomb-6147355_1280.jpeg);
 }
 
 .new-product {
@@ -15,7 +16,8 @@ input, select, button {
     padding: 9px;
     margin: 8px;
     box-sizing: border-box;
-    
+    color: black;
+    background-color: yellow;
 }
 
 .menu li{
@@ -83,4 +85,6 @@ input, select, button {
 #home-image {
     background-image: url(images/monitoring-beehives-bees.jpeg);
 }
+
+
 
