@@ -7,10 +7,15 @@ import repositories.supplier_repository as supplier_repository
 
 
 
-supplier_1 = Supplier("England", "Smbullion")
+supplier_1 = Supplier("England", "Planetullion")
 supplier_repository.save(supplier_1)
 supplier_2 = Supplier("Scotland", "CandleShack")
 supplier_repository.save(supplier_2)
+supplier_3 = Supplier("Ireland", "EcoBird")
+supplier_repository.save(supplier_3)
+supplier_4 = Supplier("Usa", "EarthGivers")
+supplier_repository.save(supplier_4)
+supplier_5 = Supplier("China", "EcoGods")
 
 product_1 = Product("Candle_2", "Big Candle", "Handmade Big Candle", 10, 12, supplier_2)
 product_repository.save(product_1)
